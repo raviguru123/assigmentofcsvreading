@@ -2,9 +2,11 @@ var fs=require('fs'),
 rootPath=__dirname+"/files",
 parse=require("csv-parse"),
 https=require("https"),
-url="https://s3.amazonaws.com/ed-college-choice-public/Most+Recent+Cohorts+(Scorecard+Elements).csv",
+//url="https://s3.amazonaws.com/ed-college-choice-public/Most+Recent+Cohorts+(Scorecard+Elements).csv",
+url=process.argv.slice(2)[0],
 property=[],
 csvjson=[];
+//console.log("url=",url);
 
 function init(url){
 	require('node.io').scrape(function() {
